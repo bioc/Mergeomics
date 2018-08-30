@@ -81,8 +81,9 @@ Mergeomics.tar.gz and install it using the following commands:
 install.packages("Mergeomics.tar.gz", repos = NULL, 
 type="source")
 ## or from bioconductor3.3 release, use following lines:
-source("https://bioconductor.org/biocLite.R")
-biocLite("Mergeomics")
+if (!requireNamespace("BiocManager", quietly=TRUE))
+    install.packages("BiocManager")
+BiocManager::install("Mergeomics")
 @
 
 However, if you want, you can also try out these examples with our webserver at
